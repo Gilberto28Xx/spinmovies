@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/img/log.ico">
+</head>
+<body>
+    <nav class="nav">
+        <div class="div-nav">
+            <div class="div-navTitulo">
+                <div class="bars__menu">
+                    <span class="line1__bars-menu"></span>
+                    <!--Span 1-->
+                    <span class="line2__bars-menu"></span>
+                    <!--Span 2-->
+                    <span class="line3__bars-menu"></span>
+                    <!--Span 3-->
+                </div>
+                <a href="{% url 'home' %}"><span class="span-s">S</span>pinMovies</a>
+            </div>
+            <!--Titulo de nuestro nav.-->
+
+            <form method="GET" action="{% url 'browser' %}" class="form_search">
+                <input type="text" name="q" placeholder="Search a movie..." class="input_search" autocomplete="off">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </form>
+            <!--Navegacion de enlaces Y Formulario-->
+        </div>
+    </nav>
+
+    <div class="capa__color">
+        <div class="slide__burger">
+            <a href="{% url 'home' %}" class="enlaces"><span class="span-s">S</span>pinMovies</a>
+            <a href="{% url 'movies' %}" class="enlaces">Movies</a>
+            <a href="{% url 'series' %}" class="enlaces">Series</a>
+            <a href="{% url 'movies' %}" class="enlaces">Eventos</a>
+            <a href="{% url 'movies' %}" class="enlaces">Contactanos</a>
+            <a href="{% url 'codigoqr' %}" class="enlaces">Codigo QR</a>
+        </div>
+    </div>
+
+    {% block content %} 
+
+    
+
+    {% endblock %}
+    <footer><p>Todos los derechos reservados.</p></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="{% static '/js/QR.js' %}"></script>
+    <script src="{% static '/js/app.js' %}"></script>
+</body>
+</html>

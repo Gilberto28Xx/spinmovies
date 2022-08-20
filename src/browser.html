@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block title %}Busqueda{% endblock %}
+{% block content %}
+
+<div class="browser__contain">
+    {% for b in brows %}
+    <a href="{% url 'description' b.id %}"><img src="../../media/{{b.photo}}" alt="browser-img"></a>
+        <p>{{b.name}}</p>
+    {% endfor %}
+
+    {% for m in browstwo %}
+    <a href="{% url 'descriptionseries' m.id %}"><img src="../../media/{{m.photo}}" alt="browser-img"></a>
+        <p>{{m.name}}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

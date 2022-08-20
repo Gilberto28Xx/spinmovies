@@ -1,0 +1,172 @@
+@use 'base/variables' as v;
+
+@keyframes burger {
+    0%{width: 5%; opacity: 0.1;}
+    100%{width: 25%; opacity: 1;}
+}
+
+@keyframes burgerTwo {
+    0%{width: 5%; opacity: 0.1;}
+    100%{width: 75%; opacity: 1;}
+}
+
+.nav {
+    background-color: v.$verdeCuatro;
+}
+
+.div-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.6rem 0;
+    background-color: v.$verdeCuatro;
+    
+    p {
+        font-size: 2rem;
+        color: v.$verdeUno;
+    }
+
+    .span-s {
+        font-size:4rem;
+    }
+
+    &.div-nav {
+        display: flex;
+        align-items: center;
+
+        .div-navTitulo{
+            display: flex;
+
+            .bars__menu {
+                position: relative;
+                width: 4rem;
+                height: 4rem;
+                margin-right: 2rem;
+                top: 0.6rem;
+                cursor: pointer;
+            }
+
+            .bars__menu span {
+                display: block;
+                width: 100%;
+                height: 0.4rem;
+                background-color: white;
+                margin-top: 0.7rem;
+                border-radius: 0.1rem;
+                transform-origin: 0px 100%;
+                transition: all 400ms;
+            }
+
+            .activeline1__bars-menu {
+                transform: rotate(45deg) translate(-0.2rem, 0.1rem);
+            }
+
+            .activeline2__bars-menu {
+                opacity: 0;
+                margin-left: -3rem;
+            }
+
+            .activeline3__bars-menu {
+                transform: rotate(-45deg) translate(-0.4rem, 0.2rem);
+            }
+        }
+
+
+        a{
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.4rem;
+        }    
+        
+        .form_search {
+            position: relative;
+            vertical-align: middle;
+            white-space: nowrap;
+            
+            .input_search {
+                padding: 0.5rem;
+                border: none;
+                outline: none;
+                width: 0rem;
+                color: v.$verdeCuatro;
+                font-weight: 600;
+                transition: all 0.6s ease;
+
+                &:focus {
+                    width: 20rem;
+                }
+            }
+    
+            .h-6 {
+                position: absolute;
+                right: -2rem;
+                top: -0.6rem;
+                color: #4f5b66;
+                background-color: #F2F2F2;
+                align-items: center;
+                width: 4rem;
+                border-radius: 20%;
+                border: 0.2rem solid silver;
+                cursor: pointer;
+            }
+
+            &:hover {
+                .input_search {
+                    width: 20rem;
+                }
+
+                .h-6 {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.slide__burger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    padding: 2rem;
+    background-color: v.$negro;
+    border-left: 0.3rem solid silver;
+    animation-name: burger;
+    animation-duration: 1s;
+    align-items: center;
+    line-height: 5rem;
+    box-shadow: 0 0 0 200rem rgb(0 0 0 / 50%);
+
+    @media (max-width: 754px){
+        animation-name: burgerTwo;
+        animation-duration: 1.5s;
+        width: 75%;
+    }
+
+    .span-s {
+        color: v.$verdeUno;
+        font-size: 4rem;
+    }
+
+    .enlaces {
+        color: v.$blanco;
+    }
+
+    a {
+        border-bottom: 2px solid #4f5b66;
+    }
+
+    a:hover {
+        border-color: red;
+    }
+}
+
+.slide__burger-close {
+    animation-name: burgerClose;
+    animation-duration: 2s;
+}

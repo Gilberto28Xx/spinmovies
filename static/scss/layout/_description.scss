@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+
+.description{
+    .description__card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10rem;
+        gap: 3rem;
+
+        img {
+            width: 50rem;
+        }
+
+        @media (max-width: 900px){
+            display: flex;
+            flex-direction: column;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

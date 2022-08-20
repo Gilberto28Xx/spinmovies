@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block title %}Series{% endblock %}
+{% load static %}
+{% block content %}
+<div class="containpage">
+    <div class="containpage__filtro">
+        <h3>Filtro de peliculas:</h3>
+        <div class="containpage__filtro-enlaces">
+            {% for c in comp %}
+                <a href="{% url 'series' %}?q_filtro={{c.name}}" name="q_filtro">{{c.name}}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <!--Filtro de peliculas-->
+    <div class="containpage__cards">
+        {% for s in sers %}
+            <div class="containpage__cards-content">
+              <a href="{% url 'descriptionseries' s.id %}"><img src="../../media/{{s.photo}}" alt="image-movie"></a> 
+                <div class="information">
+                    <p>{{s.name}}</p>
+                    <p>{{s.year_published}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!--Cartas de peliculas-->
+</div>
+{% endblock %}

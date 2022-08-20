@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block title %} Spinmovies - Menu {% endblock %}
+{% block content %}
+{% load static %}
+    <div class="contenedor contenido">
+        <img src="{% static 'img/prototipo2.png' %}" alt="">
+        <img src="{% static 'img/prototipo1.png' %}" class="img-2" alt="">
+        <img src="{% static 'img/prototipo3.png' %}" class="img-3" alt="">
+        <p class="p-spinmovies">spinm<img src="{% static 'img/spiral.png' %}" class="spiral-o" alt="">vies</p>
+    </div>
+
+    <div class="questions">
+        <h2>Preguntas frecuentes</h2>
+        <div class="questions__back">
+            <div class="tagOne tags">
+                <h3>¿Qué es Spinmovies?.</h3><br>
+                <p>
+                    Es un sitio web de transmisión gratuito donde puede
+                 ver películas y series de televisión en línea con múltiples géneros
+                 destacados como Acción, Comedia, Disparos, Deporte,
+                 Historia, Thriller,... spinmovies actualiza nuevas
+                 Películas HD y espectáculos diarios para que nunca te pierdas tu
+                 título favorito.
+                </p>
+            </div>
+            <!--End TagOne-->
+            <div class="tagTwo tags">
+                <h3>Ver películas en línea gratis en Spinmovies.</h3><br>
+                <p>
+                    Comenzamos a principios de 2022 y hemos estado creciendo constantemente.
+                 Transmisión gratuita, calidad HD, velocidad de descarga rápida de los mejores
+                 anfitriones de video como vidcloud, hydrax, mp4upload, vidstream,
+                 streamtape, mycloud son lo que hace felices a nuestros usuarios con nuestro
+                 servicio de transmisión
+                </p>
+            </div>
+            <!--End TagTwo-->
+            <div class="tagThree tags">
+                <h3>¿Es legal usar Spinmovies?</h3><br>
+                <p>
+                    Uno de los mayores temores al transmitir películas gratis
+                     es seguridad, Es aconsejable ser selectivo cuando se trata
+                     a qué sitios visitar. Sin embargo, puedes poner tus preocupaciones
+                     en reposo ya que Spinmovies ha sido uno de los más seguros
+                     destinos para cinéfilos.
+                </p>
+    
+            </div>
+        </div>
+    </div>
+{% endblock %}

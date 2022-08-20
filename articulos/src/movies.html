@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+<title>{% block title %} Movies {% endblock %}</title>
+{% block content %}
+    <div class="containpage">
+        <div class="containpage__filtro">
+            <h3>Filtro de peliculas:</h3>
+            <div class="containpage__filtro-enlaces">
+                {% for c in comp %}
+                    <a href="{% url 'movies' %}?q_filtro={{c.name}}" name="q_filtro">{{c.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <!--Filtro de peliculas-->
+        <div class="containpage__cards">
+            {% for m in movs %}
+                <div class="containpage__cards-content">
+                  <a href="{% url 'description' m.id %}"><img src="../../media/{{m.photo}}" alt="image-movie"></a> 
+                    <div class="information">
+                        <p>{{m.name}}</p>
+                        <p>{{m.year_published}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!--Cartas de peliculas-->
+    </div>
+{% endblock %}

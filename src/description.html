@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block title %}Busqueda descripcion{% endblock %}
+{% block content %}
+<div class="description">
+    {% for m in movsQ %}
+        <div class="description__card">
+            <img src="../../media/{{m.photo}}" alt="image-movie">
+            <div>
+                <h2>{{m.name}}</h2>
+                <p>Descripcion: <br><br>{{m.description}}</p>
+                <p>Publicada: <br><br>{{m.year_published}}</p>
+                <p>Dirigida por: <br><br>{{m.directorf}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

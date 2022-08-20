@@ -1,0 +1,13 @@
+@use 'base/variables' as v;
+
+footer {
+    background-color: v.$verdeCinco;
+    padding: 5rem;
+    margin-top: 3rem;
+    justify-content: center;
+    text-align: center;
+    
+    p {
+        color: v.$verdeUno;
+    }
+}
